@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | SocialHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-white min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-md bg-zinc-800 rounded-lg shadow-lg p-8">
+    <h2 class="text-2xl font-bold text-center mb-6">Add profile picture</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data" class="space-y-4">
+      <!-- <input class="w-full px-4 py-2 bg-zinc-700 rounded-md border border-zinc-600 outline-none" type="text" placeholder="Name" name="name" required> -->
+      <input type="file" name="image" >
+      <button class="w-full bg-green-600 hover:bg-green-700 px-4 py-2 rounded-md">Upload Image</button>
+    </form>
+  </div>
+</body>
+</html>

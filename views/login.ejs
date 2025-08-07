@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | SocialHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-white min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-md bg-zinc-800 rounded-lg shadow-lg p-8">
+    <h2 class="text-2xl font-bold text-center mb-6">Login to SocialHub</h2>
+
+<% if (success && success.length > 0) { %>
+  <div class="bg-green-500 text-white p-2 rounded mb-3" id="flash-success">
+    <%= success %>
+  </div>
+<% } %>
+
+<% if (error && error.length > 0) { %>
+  <div class="bg-red-500 text-white p-2 rounded mb-3" id="flash-error">
+    <%= error %>
+  </div>
+<% } %>
+
+<script>
+  setTimeout(() => {
+    const successFlash = document.getElementById('flash-success');
+    const errorFlash = document.getElementById('flash-error');
+    if (successFlash) successFlash.style.display = 'none';
+    if (errorFlash) errorFlash.style.display = 'none';
+  }, 3000); // 3 seconds
+</script>
+
+    <form action="/login" method="post" class="space-y-4">
+      <input class="w-full px-4 py-2 bg-zinc-700 rounded-md border border-zinc-600 outline-none" type="text" placeholder="Email" name="email" required>
+      <input class="w-full px-4 py-2 bg-zinc-700 rounded-md border border-zinc-600 outline-none" type="password" placeholder="Password" name="password" required>
+      <button class="w-full bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md">Login</button>
+    </form>
+  </div>
+</body>
+</html>
